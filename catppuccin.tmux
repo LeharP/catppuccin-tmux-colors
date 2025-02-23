@@ -17,7 +17,7 @@ tmux set -g status-right-length 150
 
 RESET="#[fg=${THEME[text]},bg=${THEME[base]},nobold,noitalics,nounderscore,nodim]"
 # Highlight colors
-tmux set -g mode-style "fg=${THEME[green]},bg=${THEME[subtext1]}"
+tmux set -g mode-style "fg=${THEME[lavender]},bg=${THEME[subtext1]}"
 
 tmux set -g message-style "bg=${THEME[blue]},fg=${THEME[base]}"
 tmux set -g message-command-style "fg=${THEME[text]},bg=${THEME[base]}"
@@ -58,10 +58,10 @@ tmux set -g status-left "#[fg=${THEME[base]},bg=${THEME[lavender]},bold] #{?clie
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[surface0]}] #{?#{==:#{pane_current_command},ssh},󰣀 ,}#[fg=${THEME[text]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[lavender]},bg=${THEME[surface0]}] #{?#{==:#{pane_current_command},ssh},󰣀 ,}#[fg=${THEME[text]},bold,nodim]$window_number#W#[nobold]#{?window_last_flag, , }"
 # Unfocused
-tmux set -g window-status-format "$RESET#[fg=${THEME[text]}] #{?#{==:#{pane_current_command},ssh},󰣀 ,}${RESET}$window_number#W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag, , }"
+tmux set -g window-status-format "$RESET#[fg=${THEME[text]}] #{?#{==:#{pane_current_command},ssh},󰣀 ,}${RESET}$window_number#W#[nobold,dim]#[fg=${THEME[yellow]}]#{?window_last_flag, , }"
 
 #+--- Bars RIGHT ---+
-tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
+tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$wb_git_status$date_and_time"
 tmux set -g window-status-separator ""
